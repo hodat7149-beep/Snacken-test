@@ -61,6 +61,7 @@ body {
   position: relative;
 }
 
+
 .home-content {
   max-width: 600px;
   z-index: 2;
@@ -150,4 +151,5 @@ body {
     display: none !important;
   }
 }
+
 
