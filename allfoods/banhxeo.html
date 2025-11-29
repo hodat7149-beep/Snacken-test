@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bánh Xèo Việt Nam — Snacken.</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/harder/monanVN/banhxeo.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/countries/japanese.html">Nhật Bản</a>
+            <a href="/countries/korea.html">Hàn Quốc</a>
+            <a href="/countries/china.html">Trung Quốc</a>
+            <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <main class="container">
+
+        <h1 class="title">Bánh Xèo</h1>
+
+        <section class="detail-card">
+
+            <p>
+                Bánh xèo là món ăn truyền thống Việt Nam, nổi bật với lớp vỏ giòn vàng rụm và nhân gồm tôm, thịt, giá đỗ.
+                Khi ăn thường cuốn với rau sống và chấm nước mắm chua ngọt, tạo nên hương vị đậm đà khó quên.
+            </p>
+
+            <img class="main-img" src="https://images.unsplash.com/photo-1604909052743-94e06d4f6c49?q=80&w=1470&auto=format&fit=crop" alt="Bánh Xèo Việt Nam">
+
+            <h2>NGUỒN GỐC</h2>
+            <p>
+                Bánh xèo có nguồn gốc từ miền Nam Việt Nam, phổ biến ở miền Tây và miền Trung — những nơi có nguồn nguyên liệu phong phú từ sông nước và đồng ruộng.
+            </p>
+
+            <h2>NGUYÊN LIỆU</h2>
+            <ul>
+                <li>Bột gạo</li>
+                <li>Nước cốt dừa</li>
+                <li>Nghệ tươi hoặc bột nghệ</li>
+                <li>Tôm tươi</li>
+                <li>Thịt heo thái lát mỏng</li>
+                <li>Giá đỗ</li>
+                <li>Hành lá</li>
+                <li>Dầu ăn</li>
+                <li>Rau sống các loại</li>
+                <li>Nước mắm pha hoặc nước chấm chua ngọt</li>
+            </ul>
+
+            <h2>CÁCH CHẾ BIẾN</h2>
+            <p>
+                • Trộn bột gạo, nước cốt dừa, bột nghệ và muối thành hỗn hợp sền sệt.<br>
+                • Làm nóng chảo, cho dầu và đổ một lượng bột vừa đủ, dàn mỏng.<br>
+                • Cho tôm, thịt, giá đỗ, hành lá lên trên.<br>
+                • Đậy nắp và chiên nhỏ lửa đến khi vỏ bánh vàng giòn.<br>
+                • Gấp bánh lại làm đôi và lấy ra đĩa.<br>
+            </p>
+
+            <!-- VIDEO (thay VIDEO_ID_BANH_XEO bằng ID video thật nếu bạn chọn video YouTube khác) -->
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/VIDEO_ID_BANH_XEO"
+                title="Cách làm bánh xèo Việt Nam"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h2>TRÌNH BÀY</h2>
+            <p>
+                • Bánh xèo được xếp lên đĩa lớn, có thể để nguyên chiếc hoặc cắt đôi.<br>
+                • Bày rau sống và chén nước chấm bên cạnh.<br>
+                • Trang trí thêm vài lát ớt hoặc rau thơm để tăng hấp dẫn.<br>
+            </p>
+
+            <h2>FACTS</h2>
+            <p>
+                • Tên “bánh xèo” xuất phát từ âm thanh xèo xèo khi đổ bột vào chảo nóng.<br>
+                • Có rất nhiều phiên bản theo vùng miền: bánh xèo miền Tây, bánh xèo miền Trung, bánh xèo hến Huế…<br>
+            </p>
+
+            <h2>Phần Bình Luận</h2>
+
+            <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- ===== JS (Menu mobile) ===== -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+            navbar.classList.add("active");
+            if (hideTimer) clearTimeout(hideTimer);
+
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                if (hideTimer) clearTimeout(hideTimer);
+            } else {
+                openMenu();
+            }
+        });
+
+        navbar.addEventListener("click", () => {
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>

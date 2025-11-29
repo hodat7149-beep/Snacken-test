@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gỏi Cuốn Việt Nam — Snacken.</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/harder/monanVN/goicuon.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/countries/japanese.html">Nhật Bản</a>
+            <a href="/countries/korea.html">Hàn Quốc</a>
+            <a href="/countries/china.html">Trung Quốc</a>
+            <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <main class="container">
+
+        <h1 class="title">Gỏi Cuốn</h1>
+
+        <section class="detail-card">
+
+            <p>
+                Gỏi cuốn là món ăn truyền thống của Việt Nam, mang hương vị thanh mát, dễ ăn và bổ dưỡng.
+                Món ăn thường làm từ bánh tráng cuốn cùng tôm, thịt, bún và nhiều loại rau sống,
+                thường chấm kèm nước mắm chua ngọt hoặc tương đậu phộng béo bùi. Gỏi cuốn rất được
+                ưa chuộng vì tính nhẹ, dễ ăn và phù hợp cho nhiều dịp.
+            </p>
+
+            <img class="main-img" src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1470&auto=format&fit=crop" alt="Gỏi cuốn Việt Nam">
+
+            <h2>NGUỒN GỐC</h2>
+            <p>
+                Gỏi cuốn có nguồn gốc từ miền Nam Việt Nam, đặc biệt phổ biến tại Sài Gòn.
+                Ban đầu là món ăn dân dã làm nhanh cho bữa ăn nhẹ hoặc để đãi khách.
+                Theo thời gian, gỏi cuốn lan rộng khắp cả nước và trở thành một trong những
+                món ăn đặc trưng của ẩm thực Việt Nam trên bản đồ thế giới.
+            </p>
+
+            <h2>NGUYÊN LIỆU</h2>
+            <ul>
+                <li>Bánh tráng dẻo (loại mỏng)</li>
+                <li>Bún tươi</li>
+                <li>Tôm luộc</li>
+                <li>Thịt ba chỉ luộc hoặc thịt nạc vai</li>
+                <li>Rau sống: xà lách, húng quế, tía tô, giá đỗ</li>
+                <li>Dưa leo, cà rốt (cắt sợi)</li>
+                <li>Nước chấm: tương đậu phộng hoặc nước mắm chua ngọt</li>
+            </ul>
+
+            <h2>CÁCH CHẾ BIẾN</h2>
+            <p>
+                • Luộc tôm và thịt cho chín, để nguội rồi thái lát mỏng.<br>
+                • Chuẩn bị rau sống, dưa leo, cà rốt rửa sạch và cắt sợi nhỏ.<br>
+                • Trải bánh tráng, xếp bún, rau, thịt, tôm lần lượt lên trên.<br>
+                • Cuộn chặt tay để bánh tráng ôm sát nhân, tạo cuốn gọn gàng.<br>
+                • Pha nước chấm: tương đậu phộng nấu với nước, đường, tỏi và đậu phộng giã nhuyễn;
+                hoặc pha nước mắm với tỏi, ớt, đường và chanh cho vừa miệng.<br>
+            </p>
+
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/VIDEO_ID_GOI_CUON"
+                title="Hướng dẫn làm gỏi cuốn"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h2>TRÌNH BÀY</h2>
+            <p>
+                Gỏi cuốn được xếp thành hàng trên đĩa, thường cắt đôi để lộ phần nhân nhiều màu sắc.
+                Dọn kèm chén nước chấm, rắc thêm đậu phộng rang và ít hành phi nếu dùng tương.
+            </p>
+
+            <h2>FACTS</h2>
+            <p>
+                • Gỏi cuốn được CNN bình chọn là một trong “50 món ăn ngon nhất thế giới”.<br>
+                • Biến thể phong phú: gỏi cuốn tôm thịt, gỏi cuốn chay, gỏi cuốn bò nướng, gỏi cuốn cá hồi…<br>
+            </p>
+
+            <h2>Phần Bình Luận</h2>
+
+            <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- ===== JS (Menu mobile) ===== -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+            navbar.classList.add("active");
+            if (hideTimer) clearTimeout(hideTimer);
+
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                if (hideTimer) clearTimeout(hideTimer);
+            } else {
+                openMenu();
+            }
+        });
+
+        navbar.addEventListener("click", () => {
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>
