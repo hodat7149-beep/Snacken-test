@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tteokbokki — Snacken.</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/foods/cssall/style2.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/countries/japanese.html">Nhật Bản</a>
+            <a href="/countries/korea.html">Hàn Quốc</a>
+            <a href="/countries/china.html">Trung Quốc</a>
+            <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <main class="container">
+
+        <h1 class="title">Tteokbokki (Bánh gạo cay)</h1>
+
+        <section class="detail-card">
+
+            <p>
+                Tteokbokki là món ăn đường phố nổi tiếng của Hàn Quốc, được làm từ bánh gạo dẻo mềm 
+                nấu trong nước sốt cay ngọt đặc trưng. Đây là món ăn quen thuộc trong ẩm thực Hàn Quốc,
+                được yêu thích nhờ hương vị đậm đà, cay nồng và thơm ngon.
+            </p>
+
+            <img class="main-img" 
+                 src="https://images.unsplash.com/photo-1630344591467-bec1b5a64edf?q=80&w=1470&auto=format&fit=crop"
+                 alt="Tteokbokki Hàn Quốc">
+
+            <h2>NGUỒN GỐC</h2>
+            <p>
+                Tteokbokki xuất hiện từ thời Joseon và ban đầu không cay.  
+                Về sau, khi tương ớt gochujang phổ biến, món ăn được biến tấu thành phiên bản cay đỏ rực 
+                mà ngày nay được biết đến như biểu tượng ẩm thực đường phố Hàn Quốc.
+            </p>
+
+            <h2>NGUYÊN LIỆU</h2>
+            <ul>
+                <li>Bánh gạo Hàn Quốc (Tteok)</li>
+                <li>Chả cá Hàn Quốc</li>
+                <li>Tương ớt Gochujang</li>
+                <li>Tương đậu Gochugaru</li>
+                <li>Hành lá, tỏi</li>
+                <li>Đường, nước tương</li>
+                <li>Nước dùng hoặc nước lọc</li>
+                <li>Trứng luộc (tuỳ chọn)</li>
+            </ul>
+
+            <h2>CÁCH CHẾ BIẾN</h2>
+            <p>
+                • Ngâm bánh gạo nếu bị cứng.<br>
+                • Nấu nước dùng với tương ớt, tương đậu để tạo sốt cay đỏ.<br>
+                • Cho bánh gạo và chả cá vào nấu cho đến khi mềm và thấm vị.<br>
+                • Thêm hành lá cắt khúc và trứng luộc nếu muốn.<br>
+                • Nấu đến khi nước sốt sệt lại là hoàn thành.<br>
+            </p>
+
+            <!-- VIDEO -->
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/CmDRWv-Dt60"
+                title="Cách làm Tteokbokki chuẩn vị Hàn Quốc"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h2>TRÌNH BÀY</h2>
+            <p>
+                • Múc ra đĩa sâu lòng.<br>
+                • Rắc thêm mè rang và hành lá.<br>
+                • Thường ăn nóng để cảm nhận độ dẻo mềm và vị cay chuẩn Hàn.<br>
+            </p>
+
+            <h2>FACTS</h2>
+            <p>
+                • Tteokbokki là một trong những món ăn đường phố bán chạy nhất tại Hàn Quốc.<br>
+                • Có nhiều biến thể như: kem phô mai, cay cấp độ mạnh, hải sản...<br>
+                • Đây là món ăn xuất hiện thường xuyên trong phim Hàn, tạo nên sức hút quốc tế.<br>
+            </p>
+
+            <h2>Phần Bình Luận</h2>
+
+            <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- ===== JS (Menu mobile) ===== -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+            navbar.classList.add("active");
+            if (hideTimer) clearTimeout(hideTimer);
+
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                if (hideTimer) clearTimeout(hideTimer);
+            } else {
+                openMenu();
+            }
+        });
+
+        navbar.addEventListener("click", () => {
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>

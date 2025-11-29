@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cơm Chiên Dương Châu — Snacken.</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/foods/cssall/style2.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/countries/japanese.html">Nhật Bản</a>
+            <a href="/countries/korea.html">Hàn Quốc</a>
+            <a href="/countries/china.html">Trung Quốc</a>
+            <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <main class="container">
+
+        <h1 class="title">Cơm Chiên Dương Châu</h1>
+
+        <section class="detail-card">
+
+            <p>
+                Cơm chiên Dương Châu là món ăn nổi tiếng của ẩm thực Trung Quốc, 
+                đặc trưng với màu sắc bắt mắt và sự kết hợp hài hòa giữa tôm, trứng, lạp xưởng và rau củ.
+                Món ăn có vị thơm nhẹ, béo ngậy và rất dễ ăn.
+            </p>
+
+            <img class="main-img" 
+                 src="https://images.unsplash.com/photo-1625938145247-4dc2621c99c7?q=80&w=1470&auto=format&fit=crop" 
+                 alt="Cơm chiên Dương Châu">
+
+            <h2>NGUỒN GỐC</h2>
+            <p>
+                Món ăn xuất phát từ vùng Dương Châu thuộc tỉnh Giang Tô. 
+                Đây là món đặc trưng trong các bữa tiệc và xuất hiện phổ biến tại nhà hàng Hoa trên toàn thế giới.
+            </p>
+
+            <h2>NGUYÊN LIỆU</h2>
+            <ul>
+                <li>Cơm nguội hạt rời</li>
+                <li>Tôm tươi</li>
+                <li>Lạp xưởng</li>
+                <li>Trứng gà</li>
+                <li>Đậu Hà Lan</li>
+                <li>Cà rốt</li>
+                <li>Hành lá</li>
+                <li>Nước tương, dầu mè</li>
+                <li>Gia vị: muối, tiêu</li>
+            </ul>
+
+            <h2>CÁCH CHẾ BIẾN</h2>
+            <p>
+                • Chiên trứng và tôm cho chín, để riêng.<br>
+                • Xào lạp xưởng, cà rốt và đậu Hà Lan cho thơm.<br>
+                • Cho cơm nguội vào đảo đều đến khi tơi hạt.<br>
+                • Thêm trứng, tôm vào trộn đều.<br>
+                • Nêm nước tương, dầu mè và tiêu.<br>
+                • Thêm hành lá cuối cùng và tắt bếp.<br>
+            </p>
+
+            <!-- VIDEO -->
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/YF5f7MqFCAg"
+                title="Cách làm cơm chiên Dương Châu chuẩn vị"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h2>TRÌNH BÀY</h2>
+            <p>
+                • Múc cơm ra đĩa, có thể dùng khuôn để tạo hình đẹp mắt.<br>
+                • Rắc hành lá và tiêu lên trên.<br>
+                • Bày thêm vài con tôm hoặc lát lạp xưởng cho hấp dẫn.<br>
+            </p>
+
+            <h2>FACTS</h2>
+            <p>
+                • Cơm chiên Dương Châu thực chất không xuất phát từ Dương Châu như tên gọi mà là món được sáng tạo bởi đầu bếp cung đình.<br>
+                • Đây là một trong những món cơm chiên nổi tiếng nhất châu Á.<br>
+                • Mỗi nhà hàng Trung Hoa đều có phiên bản riêng của món này.<br>
+            </p>
+
+            <h2>Phần Bình Luận</h2>
+
+            <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- ===== JS (Menu mobile) ===== -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+            navbar.classList.add("active");
+            if (hideTimer) clearTimeout(hideTimer);
+
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                if (hideTimer) clearTimeout(hideTimer);
+            } else {
+                openMenu();
+            }
+        });
+
+        navbar.addEventListener("click", () => {
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>

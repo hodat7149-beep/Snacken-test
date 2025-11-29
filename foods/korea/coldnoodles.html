@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mì Lạnh Hàn Quốc — Snacken.</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/foods/cssall/style2.css">
+</head>
+
+<body>
+
+    <!-- HEADER -->
+    <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/countries/japanese.html">Nhật Bản</a>
+            <a href="/countries/korea.html">Hàn Quốc</a>
+            <a href="/countries/china.html">Trung Quốc</a>
+            <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+
+    <!-- PAGE CONTENT -->
+    <main class="container">
+
+        <h1 class="title">Mì Lạnh Hàn Quốc (Naengmyeon)</h1>
+
+        <section class="detail-card">
+
+            <p>
+                Mì lạnh là món ăn phổ biến trong ẩm thực Hàn Quốc, gồm mì được làm lạnh ăn kèm nước dùng chua ngọt hoặc cay nhẹ.
+                Món ăn thường kết hợp với thịt bò, dưa chuột, trứng và rau củ, mang lại cảm giác mát lạnh giải nhiệt vào mùa hè.
+            </p>
+
+            <img class="main-img" 
+                 src="https://images.unsplash.com/photo-1604908177724-b35e0e3d299a?q=80&w=1470&auto=format&fit=crop"
+                 alt="Mì lạnh Hàn Quốc">
+
+            <h2>NGUỒN GỐC</h2>
+            <p>
+                Mì lạnh (Naengmyeon) có nguồn gốc từ thời triều đại Joseon của Hàn Quốc.
+                Ban đầu đây là món ăn cung đình, sau đó phổ biến rộng rãi và trở thành món ăn giải nhiệt đặc trưng vào mùa hè.
+            </p>
+
+            <h2>NGUYÊN LIỆU</h2>
+            <ul>
+                <li>Mì Naengmyeon (mì khoai tây hoặc lúa mì)</li>
+                <li>Dưa chuột thái sợi</li>
+                <li>Củ cải muối hoặc củ cải thái sợi</li>
+                <li>Thịt bò luộc thái lát</li>
+                <li>Trứng luộc</li>
+                <li>Giấm, đường, muối, tiêu</li>
+                <li>Nước dùng xương bò hoặc nước lạnh</li>
+                <li>Hành lá, mè rang</li>
+            </ul>
+
+            <h2>CÁCH CHẾ BIẾN</h2>
+            <p>
+                • Luộc mì theo hướng dẫn, xả với nước lạnh để mì dai và làm lạnh hoàn toàn.<br>
+                • Chuẩn bị nước dùng lạnh, nêm giấm, đường, muối và tiêu cho vừa ăn.<br>
+                • Chuẩn bị rau củ, thịt bò, trứng luộc và thái miếng vừa ăn.<br>
+                • Cho mì vào bát, thêm nước dùng lạnh, xếp thịt, rau củ và trứng lên trên.<br>
+                • Rắc mè rang nếu thích.<br>
+            </p>
+
+            <!-- VIDEO -->
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/VIDEO_ID_MILANH"
+                title="Cách làm mì lạnh Hàn Quốc"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h2>TRÌNH BÀY</h2>
+            <p>
+                • Dùng bát sâu lòng để xếp mì và nguyên liệu.<br>
+                • Xếp các loại thịt, trứng và rau củ xen kẽ để tạo màu sắc hài hòa.<br>
+                • Có thể dùng kèm giấm, mù tạt Hàn Quốc hoặc tương ớt theo khẩu vị.<br>
+            </p>
+
+            <h2>Phần Bình Luận</h2>
+
+            <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+            </form>
+
+        </section>
+    </main>
+
+
+    <!-- JS MENU MOBILE -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+            navbar.classList.add("active");
+            if (hideTimer) clearTimeout(hideTimer);
+
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                if (hideTimer) clearTimeout(hideTimer);
+            } else {
+                openMenu();
+            }
+        });
+
+        navbar.addEventListener("click", () => {
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>

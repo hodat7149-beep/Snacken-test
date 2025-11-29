@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Bún Bò Huế — Snacken.</title>
+
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="/harder/monanVN/bunbo.css">
+</head>
+
+<body>
+        <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+        <nav class="navbar">
+        <a href="/index.html">Home</a>
+        <a href="/countries/japanese.html">Nhật Bản</a>
+        <a href="/countries/korea.html">Hàn Quốc</a>
+        <a href="/countries/china.html">Trung Quốc</a>
+        <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+        </header>
+
+
+        <main class="container">
+        <h1 class="title">Bún Bò Huế</h1>
+
+        <section class="detail-card">
+        <p>
+                Bún bò Huế là một món ăn đặc sản nổi tiếng của miền Trung Việt Nam, được nhiều người yêu thích bởi hương vị đậm đà, cay nồng và thơm ngon đặc trưng.
+                Món ăn kết hợp giữa nước dùng ngọt thanh từ xương bò, vị cay của ớt và mùi sả thơm nồng.
+        </p>
+
+        <img class="main-img" src="https://images.unsplash.com/photo-1597345637412-9fd611e758f3?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Bún bò Huế">
+
+        <h2>NGUỒN GỐC</h2>
+        <p>
+                Bún bò Huế có nguồn gốc từ cố đô Huế. Ban đầu được gọi là “bún bò giò heo”, sau này được rút gọn thành “bún bò Huế”.
+        </p>
+
+        <h2>NGUYÊN LIỆU</h2>
+        <ul>
+                <li>Bún Huế sợi to</li>
+                <li>Xương bò, thịt bò, gân bò</li>
+                <li>Giò heo, chả Huế</li>
+                <li>Sả cây, hành, tỏi, gừng</li>
+                <li>Mắm ruốc Huế</li>
+                <li>Ớt, sa tế, nước mắm</li>
+                <li>Rau sống: giá, rau thơm, bắp chuối bào</li>
+        </ul>
+
+        <h2>CÁCH CHẾ BIẾN</h2>
+        <p>
+                • Hầm xương bò nhiều giờ với sả để tạo nước dùng ngọt thơm.<br>
+                • Thịt bò và giò heo luộc chín rồi cắt lát.<br>
+                • Pha mắm ruốc Huế với nước nóng, lọc và cho vào nước dùng.<br>
+                • Phi hành tỏi ớt, cho vào nồi để tạo màu và mùi thơm.<br>
+        </p>
+
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/A_o2qfaTgKs?si=sgEUn1cjYxlpBI5I" allowfullscreen></iframe>
+
+        <h2>TRÌNH BÀY</h2>
+        <p>
+                Xếp bún vào tô, cho thịt bò, giò heo, chả lên trên. Chan nước dùng nóng, thêm rau và sa tế.
+        </p>
+
+        <h2>FACTS</h2>
+        <p>
+                • Bún bò Huế từng được CNN bình chọn là một trong những món ăn ngon nhất thế giới.<br>
+                • Mắm ruốc Huế là yếu tố tạo nên hương vị đặc trưng.
+        </p>
+
+        <h2>Phần Bình Luận</h2>
+        <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+        </form>
+        </section>
+        </main>
+
+        <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+        navbar.classList.add("active");
+
+        if (hideTimer) clearTimeout(hideTimer);
+
+        hideTimer = setTimeout(() => {
+        navbar.classList.remove("active");
+        }, 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+        if (navbar.classList.contains("active")) {
+        navbar.classList.remove("active");
+        if (hideTimer) clearTimeout(hideTimer);
+        } else {
+        openMenu();
+        }
+        });
+
+        navbar.addEventListener("click", () => {
+        if (hideTimer) clearTimeout(hideTimer);
+
+        hideTimer = setTimeout(() => {
+        navbar.classList.remove("active");
+        }, 2500);
+        });
+        </script>
+
+</body>
+</html>

@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cơm Tấm Sài Gòn — Snacken.</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/harder/monanVN/comtam.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/countries/japanese.html">Nhật Bản</a>
+            <a href="/countries/korea.html">Hàn Quốc</a>
+            <a href="/countries/china.html">Trung Quốc</a>
+            <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <main class="container">
+
+        <h1 class="title">Cơm Tấm Sài Gòn</h1>
+
+        <section class="detail-card">
+
+            <p>
+                Cơm tấm là món ăn dân dã nhưng vô cùng nổi tiếng của người Việt,
+                đặc biệt là ở Sài Gòn. Món ăn gồm cơm tấm dẻo thơm, kết hợp cùng
+                sườn nướng, bì, chả trứng và nước mắm tỏi ớt chua ngọt.
+                Đây là món có thể dùng cho bữa sáng, trưa hoặc tối.
+            </p>
+
+            <img class="main-img" src="https://images.unsplash.com/photo-1632203171964-0dd4a4bbf57e?q=80&w=1470&auto=format&fit=crop" alt="Cơm tấm Sài Gòn">
+
+            <h2>NGUỒN GỐC</h2>
+            <p>
+                Cơm tấm có nguồn gốc từ Sài Gòn xưa. 
+                Ban đầu, đây là món ăn của người lao động nghèo, được chế biến từ hạt gạo vỡ (tấm).
+                Nhờ hương vị hấp dẫn và sự biến tấu phong phú, cơm tấm trở thành biểu tượng 
+                ẩm thực của Sài Gòn và nổi tiếng khắp cả nước.
+            </p>
+
+            <h2>NGUYÊN LIỆU</h2>
+            <ul>
+                <li>Gạo tấm (hạt gạo vỡ)</li>
+                <li>Sườn heo cốt lết</li>
+                <li>Trứng gà</li>
+                <li>Thịt heo xay làm chả trứng</li>
+                <li>Bì heo và thính</li>
+                <li>Nước mắm, đường, tỏi, ớt, chanh</li>
+                <li>Dưa leo, cà chua, đồ chua</li>
+                <li>Hành phi và mỡ hành</li>
+            </ul>
+
+            <h2>CÁCH CHẾ BIẾN</h2>
+            <p>
+                • Nấu cơm tấm hơi khô để hạt cơm tơi và dẻo.<br>
+                • Sườn heo ướp nước mắm, mật ong, tỏi và tiêu rồi nướng vàng thơm.<br>
+                • Bì heo luộc chín, thái sợi và trộn với thính gạo.<br>
+                • Làm chả trứng từ thịt xay, trứng, mộc nhĩ và gia vị, sau đó hấp chín.<br>
+                • Pha nước mắm chua ngọt từ nước mắm, đường, tỏi, ớt và chanh.<br>
+            </p>
+
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/pHczvtBpivk"
+                allowfullscreen>
+            </iframe>
+
+            <h2>FACTS</h2>
+            <p>
+                • Cơm tấm được xem là linh hồn của ẩm thực Sài Gòn.<br>
+                • Từ quán vỉa hè đến nhà hàng sang trọng, ở đâu cũng có thể tìm thấy món ăn này.<br>
+                • Ở Mỹ, Úc, Pháp…, cộng đồng người Việt vẫn gìn giữ món cơm tấm như một ký ức quê hương.<br>
+            </p>
+
+            <h2>Phần Bình Luận</h2>
+
+            <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- ===== JS (Menu mobile) ===== -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+            navbar.classList.add("active");
+            if (hideTimer) clearTimeout(hideTimer);
+
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                if (hideTimer) clearTimeout(hideTimer);
+            } else {
+                openMenu();
+            }
+        });
+
+        navbar.addEventListener("click", () => {
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>

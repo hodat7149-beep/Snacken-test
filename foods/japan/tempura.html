@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tempura Nhật Bản — Snacken.</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/foods/cssall/style2.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/countries/japanese.html">Nhật Bản</a>
+            <a href="/countries/korea.html">Hàn Quốc</a>
+            <a href="/countries/china.html">Trung Quốc</a>
+            <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <main class="container">
+
+        <h1 class="title">Tempura Nhật Bản</h1>
+
+        <section class="detail-card">
+
+            <p>
+                Tempura là món ăn truyền thống nổi tiếng của Nhật Bản, gồm các loại hải sản và rau củ
+                được tẩm bột mỏng rồi chiên giòn nhẹ, giữ được hương vị tươi ngon bên trong và lớp vỏ ngoài vàng giòn hấp dẫn.
+            </p>
+
+            <img class="main-img" 
+                src="https://images.unsplash.com/photo-1651328236028-77b585d3f4e5?q=80&w=1470&auto=format&fit=crop" 
+                alt="Tempura Nhật Bản">
+
+            <h2>NGUỒN GỐC</h2>
+            <p>
+                Tempura có nguồn gốc từ thế kỷ 16, được du nhập từ Bồ Đào Nha và sau đó được Nhật Bản biến tấu
+                thành món đặc sản nổi tiếng với phong cách chiên giòn tinh tế.
+            </p>
+
+            <h2>NGUYÊN LIỆU</h2>
+            <ul>
+                <li>Tôm, mực hoặc cá</li>
+                <li>Khoai lang, cà rốt, bí xanh, ớt chuông</li>
+                <li>Bột mì</li>
+                <li>Trứng</li>
+                <li>Nước lạnh</li>
+                <li>Dầu để chiên</li>
+                <li>Muối, nước sốt tempura (tsuyu)</li>
+            </ul>
+
+            <h2>CÁCH CHẾ BIẾN</h2>
+            <p>
+                • Rửa sạch và để ráo hải sản, rau củ.<br>
+                • Pha bột tempura từ bột mì, trứng và nước lạnh — không khuấy quá kỹ.<br>
+                • Nhúng hải sản và rau vào bột, chiên nhanh ở nhiệt độ cao đến khi vàng giòn.<br>
+                • Vớt ra để ráo dầu.<br>
+                • Chuẩn bị nước chấm tempura từ dashi, mirin, nước tương và đường.<br>
+            </p>
+
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/6D1rYnz2jw4"
+                title="Cách làm Tempura Nhật Bản"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h2>TRÌNH BÀY</h2>
+            <p>
+                • Xếp các miếng tempura xen kẽ rau củ và hải sản lên đĩa dài.<br>
+                • Dọn kèm nước sốt tempura để chấm.<br>
+                • Trang trí bằng lá shiso hoặc chanh thái lát để món ăn hấp dẫn hơn.<br>
+            </p>
+
+            <h2>FACTS</h2>
+            <p>
+                • Tempura từng được xem là “món sang trọng” trong thời Edo.<br>
+                • Tại Nhật, tempura thường dùng kèm cơm hoặc mì soba/udon.<br>
+            </p>
+
+            <h2>Phần Bình Luận</h2>
+
+            <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- ===== JS (Menu mobile) ===== -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+            navbar.classList.add("active");
+            if (hideTimer) clearTimeout(hideTimer);
+
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                if (hideTimer) clearTimeout(hideTimer);
+            } else {
+                openMenu();
+            }
+        });
+
+        navbar.addEventListener("click", () => {
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>

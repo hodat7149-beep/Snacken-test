@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dim Sum — Snacken.</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/foods/cssall/style2.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/countries/japanese.html">Nhật Bản</a>
+            <a href="/countries/korea.html">Hàn Quốc</a>
+            <a href="/countries/china.html">Trung Quốc</a>
+            <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <main class="container">
+
+        <h1 class="title">Dim Sum</h1>
+
+        <section class="detail-card">
+
+            <p>
+                Dim Sum là tập hợp các món ăn nhẹ truyền thống của Trung Quốc, được chế biến theo dạng hấp, chiên hoặc nướng. 
+                Món ăn này nổi bật với sự tinh tế, kích thước nhỏ gọn và hương vị đa dạng, thường được thưởng thức trong bữa sáng hoặc trà chiều.
+            </p>
+
+            <img class="main-img" 
+                 src="https://images.unsplash.com/photo-1595424265370-3e02d3e6c10c?q=80&w=1470&auto=format&fit=crop" 
+                 alt="Dim Sum Trung Quốc">
+
+            <h2>NGUỒN GỐC</h2>
+            <p>
+                Dim Sum có nguồn gốc từ tỉnh Quảng Đông và gắn liền với văn hóa uống trà “Yum Cha”. 
+                Trải qua nhiều thế kỷ, Dim Sum trở thành một phần quan trọng trong ẩm thực Trung Hoa và nổi tiếng trên toàn thế giới.
+            </p>
+
+            <h2>NGUYÊN LIỆU</h2>
+            <ul>
+                <li>Bột mì hoặc bột gạo</li>
+                <li>Tôm tươi</li>
+                <li>Thịt heo xay</li>
+                <li>Nấm hương</li>
+                <li>Cà rốt băm</li>
+                <li>Hành lá</li>
+                <li>Gia vị: nước tương, dầu mè, tiêu</li>
+                <li>Lá hoành thánh hoặc vỏ bánh bao</li>
+            </ul>
+
+            <h2>CÁCH CHẾ BIẾN</h2>
+            <p>
+                • Chuẩn bị nhân từ thịt, tôm, nấm và gia vị.<br>
+                • Gói nhân vào vỏ bánh tùy loại: há cảo, xíu mại, bánh bao…<br>
+                • Cho vào xửng và hấp chín khoảng 8–10 phút.<br>
+                • Một số loại dim sum được chiên vàng hoặc nướng tùy phong cách chế biến.<br>
+                • Dùng kèm nước tương hoặc giấm đen.<br>
+            </p>
+
+            <!-- VIDEO -->
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/4E5lF66A1Vs"
+                title="Cách làm Dim Sum Trung Quốc"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h2>TRÌNH BÀY</h2>
+            <p>
+                • Dim Sum được bày trong xửng tre hoặc đĩa nhỏ riêng từng món.<br>
+                • Thường phục vụ kèm trà nóng theo phong tục “Yum Cha”.<br>
+                • Có thể trang trí thêm cà rốt hoặc hành lá thái nhỏ.<br>
+            </p>
+
+            <h2>FACTS</h2>
+            <p>
+                • Dim Sum có hơn 200 loại với cách chế biến khác nhau.<br>
+                • Tại Hồng Kông, Dim Sum được xem là "bữa sáng quốc dân".<br>
+                • Xíu mại và há cảo là hai món Dim Sum nổi tiếng nhất.<br>
+            </p>
+
+            <h2>Phần Bình Luận</h2>
+
+            <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- ===== JS (Menu mobile) ===== -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+            navbar.classList.add("active");
+            if (hideTimer) clearTimeout(hideTimer);
+
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                if (hideTimer) clearTimeout(hideTimer);
+            } else {
+                openMenu();
+            }
+        });
+
+        navbar.addEventListener("click", () => {
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>

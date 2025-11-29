@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Khâu Nhục Trung Quốc — Snacken.</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/foods/cssall/style2.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/countries/japanese.html">Nhật Bản</a>
+            <a href="/countries/korea.html">Hàn Quốc</a>
+            <a href="/countries/china.html">Trung Quốc</a>
+            <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <main class="container">
+
+        <h1 class="title">Khâu Nhục</h1>
+
+        <section class="detail-card">
+
+            <p>
+                Khâu nhục là món ăn truyền thống nổi tiếng của người Hoa, đặc biệt phổ biến ở Quảng Đông và Phúc Kiến.
+                Món ăn dùng thịt ba chỉ được tẩm ướp, hấp lâu đến khi mềm tơi, béo ngậy và thơm mùi ngũ vị.
+            </p>
+
+            <img class="main-img" 
+                 src="https://i.imgur.com/zMgkO0a.jpg"
+                 alt="Khâu Nhục Trung Quốc">
+
+            <h2>NGUỒN GỐC</h2>
+            <p>
+                Khâu nhục có nguồn gốc từ vùng Phúc Kiến – Trung Quốc.  
+                Tên gọi “khâu nhục” có nghĩa là “thịt mềm rã”, đúng với đặc trưng thịt được hấp rất lâu đến khi mềm nhũn.
+                Món ăn lan rộng sang Triều Châu, Quảng Đông và cả Việt Nam (Lạng Sơn).
+            </p>
+
+            <h2>NGUYÊN LIỆU</h2>
+            <ul>
+                <li>Thịt ba chỉ nguyên miếng</li>
+                <li>Ngũ vị hương</li>
+                <li>Tỏi, gừng, hành</li>
+                <li>Rượu nấu ăn</li>
+                <li>Đường, nước tương, dầu hào</li>
+                <li>Khoai môn (tùy vùng)</li>
+            </ul>
+
+            <h2>CÁCH CHẾ BIẾN</h2>
+            <p>
+                • Chần thịt ba chỉ, sau đó chiên giòn phần bì.<br>
+                • Tẩm ướp thịt với ngũ vị hương, xì dầu, đường, rượu và tỏi gừng.<br>
+                • Xếp thịt vào bát, phủ khoai môn (nếu có).<br>
+                • Hấp trong 2–3 giờ đến khi thịt mềm rã, thấm đẫm gia vị.<br>
+                • Úp ngược bát thịt ra đĩa để tạo hình truyền thống.<br>
+            </p>
+
+            <h2>VIDEO HƯỚNG DẪN</h2>
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/oe6j-p5Tzp4"
+                title="Cách làm Khâu Nhục"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h2>TRÌNH BÀY</h2>
+            <p>
+                • Khâu nhục thường được úp ngược ra đĩa tạo hình nấm tròn mượt.<br>
+                • Thịt mềm, thấm, phần bì vàng bóng cực hấp dẫn.<br>
+                • Ăn kèm cơm nóng hoặc bánh bao hấp.<br>
+            </p>
+
+            <h2>FACTS</h2>
+            <p>
+                • Khâu nhục được xem là món “quốc túy” của người Triều Châu.<br>
+                • Ở Việt Nam, đặc biệt ở Lạng Sơn, món này cũng nổi tiếng và được biến tấu thêm mác mật.<br>
+                • Thịt chuẩn phải mềm nhưng không nát, thơm mà không ngấy.<br>
+            </p>
+
+            <h2>Phần Bình Luận</h2>
+
+            <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- ===== JS (Menu mobile) ===== -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+            navbar.classList.add("active");
+            if (hideTimer) clearTimeout(hideTimer);
+
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                if (hideTimer) clearTimeout(hideTimer);
+            } else {
+                openMenu();
+            }
+        });
+
+        navbar.addEventListener("click", () => {
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>

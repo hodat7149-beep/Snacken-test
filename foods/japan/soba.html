@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mì Soba Nhật Bản — Snacken.</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/foods/cssall/style2.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/countries/japanese.html">Nhật Bản</a>
+            <a href="/countries/korea.html">Hàn Quốc</a>
+            <a href="/countries/china.html">Trung Quốc</a>
+            <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <main class="container">
+
+        <h1 class="title">Mì Soba</h1>
+
+        <section class="detail-card">
+
+            <p>
+                Mì Soba là món ăn truyền thống của Nhật Bản, làm từ bột kiều mạch. 
+                Món ăn có thể dùng nóng trong nước dùng hoặc dùng lạnh chấm với nước sốt tsuyu. 
+                Sợi mì dai nhẹ, thanh và tốt cho sức khỏe.
+            </p>
+
+            <img class="main-img" src="https://images.unsplash.com/photo-1657375624237-d1d1ce037c64?q=80&w=1470&auto=format&fit=crop" alt="Mì Soba Nhật Bản">
+
+            <h2>NGUỒN GỐC</h2>
+            <p>
+                Mì Soba xuất hiện tại Nhật từ thời Edo (thế kỷ 17). 
+                Đây từng là món ăn phổ biến trong dân gian và được dùng trong các dịp lễ, đặc biệt là đêm giao thừa.
+            </p>
+
+            <h2>NGUYÊN LIỆU</h2>
+            <ul>
+                <li>Mì Soba (bột kiều mạch)</li>
+                <li>Nước dùng dashi</li>
+                <li>Nước tương</li>
+                <li>Mirin</li>
+                <li>Đường</li>
+                <li>Hành lá</li>
+                <li>Rong biển nori</li>
+                <li>Tempura hoặc trứng luộc (tùy khẩu vị)</li>
+            </ul>
+
+            <h2>CÁCH CHẾ BIẾN</h2>
+            <p>
+                • Luộc mì Soba theo hướng dẫn, sau đó xả nước lạnh để giữ độ dai.<br>
+                • Nấu nước dùng dashi, thêm nước tương, mirin, đường cho vừa khẩu vị.<br>
+                • Nếu ăn nóng: cho mì vào tô rồi chan nước dùng.<br>
+                • Nếu ăn lạnh: để mì ra đĩa và chuẩn bị nước sốt tsuyu để chấm.<br>
+                • Thêm hành lá, rong biển và topping theo sở thích.<br>
+            </p>
+
+            <!-- VIDEO -->
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/9p0sR7x0OlE"
+                title="Cách làm mì soba Nhật Bản"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+            <h2>TRÌNH BÀY</h2>
+            <p>
+                • Dùng tô sâu lòng cho mì nóng hoặc đĩa tre cho mì lạnh.<br>
+                • Xếp mì gọn gàng và đặt topping lên trên.<br>
+                • Trang trí hành lá và rong biển để tăng hương vị và màu sắc.<br>
+            </p>
+
+            <h2>FACTS</h2>
+            <p>
+                • Người Nhật thường ăn Soba vào đêm giao thừa để cầu may mắn.<br>
+                • Soba được xem là tốt cho sức khỏe nhờ làm từ kiều mạch giàu chất xơ.<br>
+            </p>
+
+            <h2>Phần Bình Luận</h2>
+
+            <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- ===== JS (Menu mobile) ===== -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+            navbar.classList.add("active");
+            if (hideTimer) clearTimeout(hideTimer);
+
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                if (hideTimer) clearTimeout(hideTimer);
+            } else {
+                openMenu();
+            }
+        });
+
+        navbar.addEventListener("click", () => {
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>

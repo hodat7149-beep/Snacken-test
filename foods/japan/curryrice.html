@@ -1,0 +1,147 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cơm Cà Ri Nhật — Snacken.</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/foods/cssall/style2.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/countries/japanese.html">Nhật Bản</a>
+            <a href="/countries/korea.html">Hàn Quốc</a>
+            <a href="/countries/china.html">Trung Quốc</a>
+            <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <main class="container">
+
+        <h1 class="title">Cơm Cà Ri Nhật Bản</h1>
+
+        <section class="detail-card">
+
+            <p>
+                Cơm cà ri Nhật là món ăn phổ biến tại Nhật Bản, gồm cơm trắng ăn kèm với cà ri sệt,
+                thơm ngon, có vị ngọt dịu và hơi cay nhẹ, thường kết hợp với thịt, khoai tây,
+                cà rốt và hành tây, mang đến bữa ăn đầy đủ dinh dưỡng và hấp dẫn.
+            </p>
+
+            <img class="main-img" src="https://images.unsplash.com/photo-1604908177522-4324f4a5d479?q=80&w=1470&auto=format&fit=crop" alt="Cơm Cà Ri Nhật Bản">
+
+            <h2>NGUỒN GỐC</h2>
+            <p>
+                Món ăn có nguồn gốc từ Nhật Bản vào cuối thế kỷ 19, được du nhập từ ẩm thực Ấn Độ
+                thông qua Anh Quốc, và đã được Nhật Bản biến tấu thành món cà ri đặc trưng.
+            </p>
+
+            <h2>NGUYÊN LIỆU</h2>
+            <ul>
+                <li>Cà ri Nhật dạng khối hoặc bột</li>
+                <li>Thịt gà, bò hoặc heo</li>
+                <li>Khoai tây thái khối</li>
+                <li>Cà rốt thái khối</li>
+                <li>Hành tây</li>
+                <li>Nước dùng hoặc nước lọc</li>
+                <li>Dầu ăn, muối, tiêu</li>
+                <li>Cơm trắng</li>
+            </ul>
+
+            <h2>CÁCH CHẾ BIẾN</h2>
+            <p>
+                • Phi thơm hành tây, cho thịt vào xào săn.<br>
+                • Thêm khoai tây và cà rốt, đảo đều.<br>
+                • Đổ nước dùng vào nấu đến khi mềm.<br>
+                • Thêm cà ri Nhật vào khuấy đều đến khi sệt lại.<br>
+                • Nêm nếm muối tiêu cho vừa ăn.<br>
+            </p>
+
+            <!-- VIDEO CÀ RI NHẬT -->
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/1pW2wOr4I3w"
+                title="Cách làm cơm cà ri Nhật Bản"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+            <h2>TRÌNH BÀY</h2>
+            <p>
+                • Múc cơm ra đĩa sâu lòng.<br>
+                • Rưới cà ri lên một phần cơm.<br>
+                • Trang trí với rau thơm hoặc hành lá.<br>
+                • Dùng nóng để giữ trọn hương vị.<br>
+            </p>
+
+            <h2>FACTS</h2>
+            <p>
+                • Cơm cà ri là một trong 3 món phổ biến nhất Nhật Bản (cùng ramen và sushi).<br>
+                • Có nhiều loại cà ri: cà ri bò, cà ri heo, cà ri hải sản, cà ri rau củ…<br>
+            </p>
+
+            <h2>Phần Bình Luận</h2>
+
+            <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- ===== JS MENU MOBILE ===== -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+            navbar.classList.add("active");
+            if (hideTimer) clearTimeout(hideTimer);
+
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                if (hideTimer) clearTimeout(hideTimer);
+            } else {
+                openMenu();
+            }
+        });
+
+        navbar.addEventListener("click", () => {
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>

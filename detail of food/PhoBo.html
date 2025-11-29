@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Phở Bò Việt Nam — Snacken.</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/harder/monanVN/phobo.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/countries/japanese.html">Nhật Bản</a>
+            <a href="/countries/korea.html">Hàn Quốc</a>
+            <a href="/countries/china.html">Trung Quốc</a>
+            <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <main class="container">
+
+        <h1 class="title">Phở Bò Việt Nam</h1>
+
+        <section class="detail-card">
+
+            <p>
+                Phở bò là món ăn truyền thống nổi tiếng nhất của Việt Nam. 
+                Món ăn gồm bánh phở mềm, nước dùng trong và thơm cùng thịt bò thái mỏng.
+                Hương vị đặc trưng được tạo nên từ các loại gia vị như quế, hồi, gừng nướng 
+                và các loại rau thơm ăn kèm.
+            </p>
+
+            <img class="main-img" src="https://images.unsplash.com/photo-1604908177223-60f5d5b99a47?q=80&w=1470&auto=format&fit=crop" alt="Phở bò Việt Nam">
+
+            <h2>NGUỒN GỐC</h2>
+            <p>
+                Phở xuất hiện vào đầu thế kỷ 20 tại miền Bắc, đặc biệt là Hà Nội. 
+                Sau đó lan rộng khắp cả nước và trở thành biểu tượng của ẩm thực Việt Nam.
+            </p>
+
+            <h2>NGUYÊN LIỆU</h2>
+            <ul>
+                <li>Bánh phở làm từ gạo</li>
+                <li>Thịt bò tái, gầu, chín tùy loại</li>
+                <li>Xương bò ninh nước dùng</li>
+                <li>Hành tây, gừng, quế, hồi, thảo quả</li>
+                <li>Hành lá, rau mùi, rau thơm</li>
+                <li>Chanh, ớt, tương đen, tương ớt</li>
+            </ul>
+
+            <h2>CÁCH CHẾ BIẾN</h2>
+            <p>
+                • Chần xương bò để khử mùi và sạch bọt.<br>
+                • Ninh xương cùng hành, gừng nướng và quế, hồi để tạo hương thơm.<br>
+                • Thái thịt bò mỏng, chuẩn bị rau và bánh phở.<br>
+                • Trụng bánh phở qua nước sôi rồi cho vào tô.<br>
+                • Xếp thịt bò lên trên và chan nước dùng thật nóng.<br>
+            </p>
+
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/c9GfHgMk1ac?si=vwdXmjxZJsizxyMk"
+                allowfullscreen>
+            </iframe>
+
+            <h2>FACTS</h2>
+            <p>
+                • Phở đã được đưa vào từ điển tiếng Anh Oxford.<br>
+                • Mỗi vùng ở Việt Nam có cách nấu phở khác nhau: phở Bắc thanh, phở Nam đậm đà.<br>
+                • Được CNN nhiều lần xếp vào danh sách món ngon nhất thế giới.<br>
+            </p>
+
+            <h2>Phần Bình Luận</h2>
+
+            <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- ===== JS (Menu mobile) ===== -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+            navbar.classList.add("active");
+            if (hideTimer) clearTimeout(hideTimer);
+
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                if (hideTimer) clearTimeout(hideTimer);
+            } else {
+                openMenu();
+            }
+        });
+
+        navbar.addEventListener("click", () => {
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>

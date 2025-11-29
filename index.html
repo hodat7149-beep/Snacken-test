@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <link rel="stylesheet" href="style.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400&display=swap" rel="stylesheet">
+
+  <title>Snacken — Home</title>
+</head>
+
+<body>
+
+  <!-- NAVBAR -->
+  <header class="header">
+    <a href="/" class="logo">Snacken.</a>
+
+    <nav class="navbar">
+      <a href="/index.html" class="active">Home</a>
+      <a href="/countries/japanese.html">Nhật Bản</a>
+      <a href="/countries/korea.html">Hàn Quốc</a>
+      <a href="/countries/china.html">Trung Quốc</a>
+      <a href="/countries/vietnam.html">Việt Nam</a>
+    </nav>
+
+    <div class="menu-toggle" id="menu-toggle">☰</div>
+  </header>
+
+  <!-- HOME SECTION -->
+  <section class="home">
+    <div class="home-bg"></div>
+
+    <div class="home-content">
+      <h1>Chào mừng đến với Snacken</h1>
+      <h3>Khám phá ẩm thực các quốc gia Châu Á</h3>
+      <p>
+        Snacken là trang web giúp bạn tìm hiểu những món ăn truyền thống nổi tiếng từ
+        Nhật Bản, Hàn Quốc, Trung Quốc và Việt Nam. Mỗi món ăn đều mang một câu chuyện,
+        hương vị và nét văn hóa đặc trưng riêng.
+      </p>
+    </div>
+  </section>
+
+  <!-- BG EFFECT -->
+  <script>
+    const homeSection = document.querySelector(".home");
+    const bg = document.querySelector(".home-bg");
+
+    homeSection.addEventListener("mouseenter", () => {
+      bg.classList.add("blur");
+    });
+
+    homeSection.addEventListener("mouseleave", () => {
+      bg.classList.remove("blur");
+    });
+  </script>
+
+  <!-- MENU TOGGLE -->
+  <script>
+    const toggle = document.getElementById("menu-toggle");
+    const navbar = document.querySelector(".navbar");
+    let hideTimer = null;
+
+    function openMenu() {
+      navbar.classList.add("active");
+
+      if (hideTimer) clearTimeout(hideTimer);
+
+      hideTimer = setTimeout(() => {
+        navbar.classList.remove("active");
+      }, 2000);
+    }
+
+    toggle.addEventListener("click", () => {
+      if (navbar.classList.contains("active")) {
+        navbar.classList.remove("active");
+        clearTimeout(hideTimer);
+      } else {
+        openMenu();
+      }
+    });
+
+    navbar.addEventListener("click", () => {
+      clearTimeout(hideTimer);
+      hideTimer = setTimeout(() => {
+        navbar.classList.remove("active");
+      }, 2000);
+    });
+  </script>
+
+</body>
+</html>

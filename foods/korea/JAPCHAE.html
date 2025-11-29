@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miến xào Japchae — Snacken.</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/foods/cssall/style2.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/countries/japanese.html">Nhật Bản</a>
+            <a href="/countries/korea.html">Hàn Quốc</a>
+            <a href="/countries/china.html">Trung Quốc</a>
+            <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+    <main class="container">
+
+        <h1 class="title">Miến Xào Japchae</h1>
+
+        <section class="detail-card">
+
+            <p>
+                Japchae là món miến xào truyền thống nổi tiếng của Hàn Quốc, kết hợp hài hòa giữa miến dong,
+                rau củ và thịt bò. Món ăn có vị ngọt nhẹ, thơm mùi dầu mè và mang màu sắc rất bắt mắt.
+            </p>
+
+            <img class="main-img"
+                 src="https://images.unsplash.com/photo-1613470202466-9fbc1d47e11f?q=80&w=1470&auto=format&fit=crop"
+                 alt="Miến xào Japchae">
+
+            <h2>NGUỒN GỐC</h2>
+            <p>
+                Japchae xuất hiện lần đầu từ thế kỷ 17 trong Hoàng cung Triều Tiên và ban đầu không có miến,
+                chỉ gồm rau củ trộn. Sau này món ăn được bổ sung miến khoai lang và trở thành món ăn lễ hội
+                phổ biến tại Hàn Quốc.
+            </p>
+
+            <h2>NGUYÊN LIỆU</h2>
+            <ul>
+                <li>Miến khoai lang Hàn Quốc</li>
+                <li>Thịt bò (thái sợi)</li>
+                <li>Cà rốt, hành tây, rau bina, nấm</li>
+                <li>Tỏi băm</li>
+                <li>Nước tương, đường</li>
+                <li>Dầu mè, mè rang</li>
+                <li>Hạt tiêu</li>
+            </ul>
+
+            <h2>CÁCH CHẾ BIẾN</h2>
+            <p>
+                • Luộc miến khoai lang đến khi mềm, để ráo và trộn với dầu mè.<br>
+                • Xào thịt bò với tỏi cho thơm.<br>
+                • Xào lần lượt các loại rau củ: cà rốt, hành tây, rau bina, nấm.<br>
+                • Trộn miến với thịt, rau, nêm nước tương – đường – dầu mè.<br>
+                • Rang mè và rắc lên trên.<br>
+            </p>
+
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/QhGCL5SGS9A"
+                title="Cách làm Miến xào Japchae chuẩn Hàn Quốc"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowfullscreen>
+            </iframe>
+
+            <h2>TRÌNH BÀY</h2>
+            <p>
+                • Cho miến ra đĩa lớn.<br>
+                • Rắc mè rang và ít dầu mè lên trên để tăng độ bóng đẹp.<br>
+                • Có thể ăn nóng hoặc nguội tùy sở thích.<br>
+            </p>
+
+            <h2>FACTS</h2>
+            <p>
+                • Japchae là món ăn truyền thống quan trọng trong các dịp lễ lớn của Hàn Quốc.<br>
+                • Loại miến làm Japchae là miến khoai lang – dai, trong và rất đặc trưng.<br>
+                • Đây là một trong những món Hàn Quốc phổ biến nhất trên thế giới.<br>
+            </p>
+
+            <h2>Phần Bình Luận</h2>
+
+            <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- JS MENU -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+            navbar.classList.add("active");
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => navbar.classList.remove("active"), 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                if (hideTimer) clearTimeout(hideTimer);
+            } else openMenu();
+        });
+
+        navbar.addEventListener("click", () => {
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => navbar.classList.remove("active"), 2500);
+        });
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bibimbap — Snacken.</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/foods/cssall/style2.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/countries/japanese.html">Nhật Bản</a>
+            <a href="/countries/korea.html">Hàn Quốc</a>
+            <a href="/countries/china.html">Trung Quốc</a>
+            <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <main class="container">
+
+        <h1 class="title">Bibimbap – Cơm Trộn Hàn Quốc</h1>
+
+        <section class="detail-card">
+
+            <p>
+                Bibimbap là món ăn truyền thống Hàn Quốc gồm cơm trắng ăn kèm nhiều loại rau củ,
+                thịt và trứng. Món ăn nổi bật với vị cay, ngọt, thanh mát và màu sắc vô cùng hấp dẫn.
+            </p>
+
+            <img class="main-img" src="https://images.unsplash.com/photo-1626082927389-6c2b33cd8075?q=80&w=1470&auto=format&fit=crop" alt="Bibimbap Hàn Quốc">
+
+            <h2>NGUỒN GỐC</h2>
+            <p>
+                Bibimbap xuất hiện từ thời triều đại Joseon. Đây là món ăn dùng để tận dụng các nguyên liệu thừa,
+                sau đó trở thành biểu tượng văn hóa ẩm thực Hàn Quốc.
+            </p>
+
+            <h2>NGUYÊN LIỆU</h2>
+            <ul>
+                <li>Cơm trắng</li>
+                <li>Thịt bò thái lát mỏng hoặc băm</li>
+                <li>Trứng gà hoặc trứng vịt</li>
+                <li>Cà rốt thái sợi</li>
+                <li>Dưa chuột thái sợi</li>
+                <li>Rau cải bó xôi</li>
+                <li>Giá đỗ</li>
+                <li>Hành lá, tỏi băm</li>
+                <li>Dầu mè</li>
+                <li>Nước tương</li>
+                <li>Gochujang (tương ớt Hàn Quốc)</li>
+                <li>Muối, đường, tiêu</li>
+            </ul>
+
+            <h2>CÁCH CHẾ BIẾN</h2>
+            <p>
+                • Xào thịt bò với tỏi, dầu mè, nước tương và đường cho thấm gia vị.<br>
+                • Trụng hoặc xào từng loại rau củ để giữ màu xanh tươi và vị giòn ngọt.<br>
+                • Chiên trứng theo sở thích (ốp la hoặc lòng đào).<br>
+                • Cho cơm vào bát, xếp từng loại rau, thịt và trứng lên trên.<br>
+                • Khi ăn trộn đều với gochujang theo khẩu vị.<br>
+            </p>
+
+            <!-- VIDEO -->
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/VIDEO_ID_BIBIMBAP"
+                title="Cách làm Bibimbap Hàn Quốc"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h2>TRÌNH BÀY</h2>
+            <p>
+                • Dùng bát sâu lòng để bày món ăn.<br>
+                • Sắp xếp rau củ, thịt và trứng thật đều theo vòng tròn để món ăn đẹp mắt.<br>
+                • Khi thưởng thức, trộn tất cả nguyên liệu lên cùng nước sốt gochujang.<br>
+            </p>
+
+            <h2>Phần Bình Luận</h2>
+
+            <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- ===== JS (Menu mobile) ===== -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+            navbar.classList.add("active");
+            if (hideTimer) clearTimeout(hideTimer);
+
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                if (hideTimer) clearTimeout(hideTimer);
+            } else {
+                openMenu();
+            }
+        });
+
+        navbar.addEventListener("click", () => {
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>

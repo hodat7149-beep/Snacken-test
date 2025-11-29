@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimchi — Snacken.</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/foods/cssall/style2.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/countries/japanese.html">Nhật Bản</a>
+            <a href="/countries/korea.html">Hàn Quốc</a>
+            <a href="/countries/china.html">Trung Quốc</a>
+            <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <main class="container">
+
+        <h1 class="title">Kimchi</h1>
+
+        <section class="detail-card">
+
+            <p>
+                Kim chi là món ăn truyền thống của Hàn Quốc, được làm từ rau củ lên men, nổi bật với vị 
+                cay – chua đặc trưng, giàu vitamin và probiotics, thường ăn kèm cơm hoặc các món Hàn khác.
+            </p>
+
+            <img class="main-img" 
+                 src="https://images.unsplash.com/photo-1604908811928-d691c4ba3cdd?w=1470&auto=format&fit=crop"
+                 alt="Kimchi Hàn Quốc">
+
+            <h2>NGUỒN GỐC</h2>
+            <p>
+                Kim chi xuất hiện từ hàng trăm năm trước tại Hàn Quốc, trở thành một phần quan trọng trong 
+                văn hóa ẩm thực và được lan tỏa khắp thế giới.
+            </p>
+
+            <h2>NGUYÊN LIỆU</h2>
+            <ul>
+                <li>Cải thảo</li>
+                <li>Cà rốt</li>
+                <li>Hành lá</li>
+                <li>Tỏi băm, gừng băm</li>
+                <li>Ớt bột Hàn Quốc</li>
+                <li>Nước mắm hoặc muối</li>
+                <li>Đường hoặc mật ong</li>
+                <li>Cá cơm khô hoặc nước cốt cá (tùy chọn)</li>
+            </ul>
+
+            <h2>CÁCH CHẾ BIẾN</h2>
+            <p>
+                • Ngâm cải thảo với muối vài giờ cho mềm.<br>
+                • Rửa sạch, để ráo, rồi trộn với tỏi, gừng, ớt bột, nước mắm, đường và rau củ.<br>
+                • Cho hỗn hợp vào hũ sạch, nén chặt và đậy nắp.<br>
+                • Để lên men 1–2 ngày ở nhiệt độ phòng, sau đó bảo quản lạnh để dùng dần.<br>
+            </p>
+
+            <!-- VIDEO -->
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/wI3ZLNi3BmM"
+                title="Cách làm kimchi Hàn Quốc"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h2>TRÌNH BÀY</h2>
+            <p>
+                • Cắt thành miếng vừa ăn.<br>
+                • Dùng kèm cơm trắng hoặc món Hàn Quốc khác.<br>
+            </p>
+
+            <h2>FACTS</h2>
+            <p>
+                • Kimchi có hơn 200 loại khác nhau.<br>
+                • Là một trong những món ăn lên men tốt nhất cho sức khỏe.<br>
+            </p>
+
+            <h2>Phần Bình Luận</h2>
+
+            <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- ===== JS (Menu mobile) ===== -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+            navbar.classList.add("active");
+            if (hideTimer) clearTimeout(hideTimer);
+
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                if (hideTimer) clearTimeout(hideTimer);
+            } else {
+                openMenu();
+            }
+        });
+
+        navbar.addEventListener("click", () => {
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>

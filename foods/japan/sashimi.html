@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sashimi Nhật Bản — Snacken.</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/foods/cssall/style2.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/countries/japanese.html">Nhật Bản</a>
+            <a href="/countries/korea.html">Hàn Quốc</a>
+            <a href="/countries/china.html">Trung Quốc</a>
+            <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <main class="container">
+
+        <h1 class="title">Sashimi</h1>
+
+        <section class="detail-card">
+
+            <p>
+                Sashimi là món ăn truyền thống nổi tiếng của Nhật Bản, gồm các lát hải sản tươi sống được cắt lát mỏng
+                và trình bày tinh tế. Món ăn nhấn mạnh sự tươi ngon tự nhiên của nguyên liệu, thường ăn kèm nước tương,
+                wasabi và gừng hồng.
+            </p>
+
+            <img class="main-img"
+                src="https://images.unsplash.com/photo-1606851092994-7b3bca1a3c88?q=80&w=1470&auto=format&fit=crop"
+                alt="Sashimi Nhật Bản">
+
+            <h2>NGUỒN GỐC</h2>
+            <p>
+                Sashimi xuất hiện từ thời kỳ Edo ở Nhật Bản. Với nguồn hải sản phong phú, người Nhật đã tạo ra món ăn
+                này để giữ trọn vẹn vị tươi nguyên của cá và mực. Kỹ thuật cắt sashimi phát triển thành một nghệ thuật
+                tinh xảo.
+            </p>
+
+            <h2>NGUYÊN LIỆU</h2>
+            <ul>
+                <li>Cá hồi</li>
+                <li>Cá ngừ</li>
+                <li>Bạch tuộc</li>
+                <li>Mực</li>
+                <li>Nước tương</li>
+                <li>Wasabi</li>
+                <li>Gừng hồng</li>
+                <li>Rong biển trang trí</li>
+                <li>Đá lạnh (bảo quản sashimi)</li>
+            </ul>
+
+            <h2>CÁCH CHẾ BIẾN</h2>
+            <p>
+                • Chọn hải sản tươi sống, đạt chuẩn sashimi.<br>
+                • Rửa sạch và làm lạnh nguyên liệu.<br>
+                • Dùng dao sắc cắt lát theo từng kiểu truyền thống (Hira-zukuri, Usu-zukuri...).<br>
+                • Bày lên đĩa cùng đá lạnh, lá shiso hoặc rong biển.<br>
+                • Dùng kèm nước tương và wasabi.<br>
+            </p>
+
+            <!-- VIDEO -->
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/VIDEO_ID_SASHIMI"
+                title="Cách làm sashimi Nhật Bản"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h2>TRÌNH BÀY</h2>
+            <p>
+                • Sashimi được xếp thành từng lát đẹp mắt theo phong cách Nhật Bản.<br>
+                • Trang trí kèm lá shiso, củ cải bào, hoặc rong biển.<br>
+                • Thường đặt trên khay đá để giữ độ tươi ngon.<br>
+            </p>
+
+            <h2>FACTS</h2>
+            <p>
+                • Sashimi chú trọng độ tươi và kỹ thuật cắt hơn bất kỳ món ăn nào khác của Nhật.<br>
+                • Tên các cách cắt như Hira-zukuri, Kaku-zukuri thể hiện tay nghề của đầu bếp.<br>
+            </p>
+
+            <h2>Phần Bình Luận</h2>
+
+            <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- ===== JS (Menu mobile) ===== -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+            navbar.classList.add("active");
+            if (hideTimer) clearTimeout(hideTimer);
+
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                if (hideTimer) clearTimeout(hideTimer);
+            } else {
+                openMenu();
+            }
+        });
+
+        navbar.addEventListener("click", () => {
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>

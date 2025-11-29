@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lẩu Tứ Xuyên — Snacken.</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/foods/cssall/style2.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/countries/japanese.html">Nhật Bản</a>
+            <a href="/countries/korea.html">Hàn Quốc</a>
+            <a href="/countries/china.html">Trung Quốc</a>
+            <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <main class="container">
+
+        <h1 class="title">Lẩu Tứ Xuyên</h1>
+
+        <section class="detail-card">
+
+            <p>
+                Lẩu Tứ Xuyên là món ăn nổi bật của ẩm thực Trung Quốc với vị cay nồng, tê đặc trưng của 
+                ớt và tiêu Tứ Xuyên. Nước lẩu đỏ rực, thơm nồng tạo nên trải nghiệm ẩm thực mạnh mẽ và hấp dẫn.
+            </p>
+
+            <img class="main-img" 
+                 src="https://images.unsplash.com/photo-1576867757603-05b891dd4a32?q=80&w=1470&auto=format&fit=crop"
+                 alt="Lẩu Tứ Xuyên">
+
+            <h2>NGUỒN GỐC</h2>
+            <p>
+                Lẩu Tứ Xuyên có nguồn gốc từ thành phố Trùng Khánh thuộc khu vực Tứ Xuyên. 
+                Món ăn ra đời khi những người lao động ven sông nấu nước lẩu cay để giúp cơ thể ấm áp trong mùa lạnh.
+            </p>
+
+            <h2>NGUYÊN LIỆU</h2>
+            <ul>
+                <li>Xương heo hoặc bò để nấu nước dùng</li>
+                <li>Ớt khô, dầu ớt</li>
+                <li>Tiêu Tứ Xuyên (Hoa tiêu)</li>
+                <li>Tỏi, gừng</li>
+                <li>Rượu nấu ăn</li>
+                <li>Các loại rau: cải thảo, rau muống, nấm</li>
+                <li>Thịt bò, thịt heo, cá, đậu hũ</li>
+                <li>Viên lẩu, mì hoặc bún</li>
+            </ul>
+
+            <h2>CÁCH CHẾ BIẾN</h2>
+            <p>
+                • Hầm xương trong vài giờ để có nước dùng ngọt tự nhiên.<br>
+                • Phi gừng, tỏi, ớt và tiêu Tứ Xuyên cho dậy mùi.<br>
+                • Trút hỗn hợp gia vị vào nồi nước dùng.<br>
+                • Thêm dầu ớt, tương đậu cay và nêm nếm.<br>
+                • Khi ăn, nhúng các loại thịt, cá và rau vào nồi lẩu cay để thưởng thức.<br>
+            </p>
+
+            <!-- VIDEO -->
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/14dFjMQGgLw"
+                title="Cách làm Lẩu Tứ Xuyên cay chuẩn vị Trung Quốc"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h2>TRÌNH BÀY</h2>
+            <p>
+                • Nồi lẩu thường được đặt giữa bàn ăn.<br>
+                • Đồ nhúng được bày xung quanh trên đĩa lớn.<br>
+                • Có thể chia nồi thành 2 ngăn: cay đỏ và thanh ngọt.<br>
+            </p>
+
+            <h2>FACTS</h2>
+            <p>
+                • Tiêu Tứ Xuyên mang lại cảm giác “tê” đặc trưng, không giống bất kỳ vùng miền nào.<br>
+                • Món lẩu này được xem như biểu tượng văn hóa ẩm thực Tứ Xuyên.<br>
+                • Hiện nay có nhiều cấp độ cay, từ nhẹ đến “siêu cay” cho người yêu thử thách.<br>
+            </p>
+
+            <h2>Phần Bình Luận</h2>
+
+            <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- ===== JS (Menu mobile) ===== -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+            navbar.classList.add("active");
+            if (hideTimer) clearTimeout(hideTimer);
+
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                if (hideTimer) clearTimeout(hideTimer);
+            } else {
+                openMenu();
+            }
+        });
+
+        navbar.addEventListener("click", () => {
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>

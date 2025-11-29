@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sushi Nhật Bản — Snacken.</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS chung -->
+    <link rel="stylesheet" href="/foods/cssall/style2.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/countries/japanese.html">Nhật Bản</a>
+            <a href="/countries/korea.html">Hàn Quốc</a>
+            <a href="/countries/china.html">Trung Quốc</a>
+            <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+    <!-- ===== NỘI DUNG ===== -->
+    <main class="container">
+
+        <h1 class="title">Sushi</h1>
+
+        <section class="detail-card">
+
+            <p>
+                Sushi là món ăn truyền thống Nhật Bản, gồm cơm trộn giấm ăn kèm hải sản tươi sống,
+                rau củ hoặc trứng. Món ăn nổi bật với vị thanh ngọt tự nhiên và hương thơm đặc trưng
+                của giấm, thường dùng làm món khai vị hoặc bữa chính.
+            </p>
+
+            <img class="main-img" src="https://images.unsplash.com/photo-1553621042-f6e147245754?q=80&w=1470&auto=format&fit=crop" alt="Sushi Nhật Bản">
+
+            <h2>NGUỒC GỐC</h2>
+            <p>
+                Sushi xuất hiện từ thế kỷ 8–9 tại Nhật Bản, ban đầu là cách bảo quản cá bằng cơm lên men.
+                Về sau món ăn được biến tấu thành sushi hiện đại với cơm trộn giấm và hải sản tươi.
+            </p>
+
+            <h2>NGUYÊN LIỆU</h2>
+            <ul>
+                <li>Cơm Nhật</li>
+                <li>Giấm gạo, đường, muối</li>
+                <li>Rong biển nori</li>
+                <li>Cá hồi, cá ngừ, tôm, mực</li>
+                <li>Trứng cuộn tamago</li>
+                <li>Dưa chuột, bơ</li>
+                <li>Wasabi & gừng ngâm</li>
+            </ul>
+
+            <h2>CÁCH CHẾ BIẾN</h2>
+            <p>
+                • Trộn cơm với giấm gạo, đường và muối.<br>
+                • Cắt hải sản, trứng và rau củ thành miếng vừa ăn.<br>
+                • Trải cơm lên lá rong biển, xếp nhân và cuộn chặt bằng thảm tre.<br>
+                • Cắt khoanh vừa ăn và xếp ra đĩa.<br>
+            </p>
+
+            <!-- VIDEO -->
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/VIDEO_ID_SUSHI"
+                title="Cách làm Sushi Nhật Bản"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h2>TRÌNH BÀY</h2>
+            <p>
+                • Xếp sushi lên đĩa dài hoặc vuông.<br>
+                • Trang trí với wasabi, gừng ngâm và nước tương.<br>
+                • Có thể kết hợp nhiều loại sushi cho đẹp mắt.<br>
+            </p>
+
+            <h2>Phần Bình Luận</h2>
+
+            <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- ===== JS MENU MOBILE ===== -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+            navbar.classList.add("active");
+            if (hideTimer) clearTimeout(hideTimer);
+
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                if (hideTimer) clearTimeout(hideTimer);
+            } else {
+                openMenu();
+            }
+        });
+
+        navbar.addEventListener("click", () => {
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>

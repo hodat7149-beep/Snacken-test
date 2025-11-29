@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kimbap Hàn Quốc — Snacken.</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/foods/cssall/style2.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/countries/japanese.html">Nhật Bản</a>
+            <a href="/countries/korea.html">Hàn Quốc</a>
+            <a href="/countries/china.html">Trung Quốc</a>
+            <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <main class="container">
+
+        <h1 class="title">Kimbap</h1>
+
+        <section class="detail-card">
+
+            <p>
+                Kimbap là món ăn nổi tiếng của Hàn Quốc, gồm cơm trắng cuộn cùng các nguyên liệu như trứng,
+                cà rốt, dưa chuột, cải bó xôi, xúc xích hoặc thanh cua, tất cả được cuộn trong lá rong biển.
+                Món ăn có vị hài hòa, dễ ăn và rất tiện lợi mang theo.
+            </p>
+
+            <img class="main-img"
+                 src="https://images.unsplash.com/photo-1532347231146-80afc9e3df2b?q=80&w=1470&auto=format&fit=crop"
+                 alt="Kimbap Hàn Quốc">
+
+            <h2>NGUỒN GỐC</h2>
+            <p>
+                Kimbap xuất hiện vào đầu thế kỷ 20 và chịu ảnh hưởng từ món norimaki của Nhật Bản.
+                Tuy nhiên, theo thời gian, người Hàn đã biến tấu để phù hợp khẩu vị địa phương và tạo nên
+                một món ăn hoàn toàn riêng biệt.
+            </p>
+
+            <h2>NGUYÊN LIỆU</h2>
+            <ul>
+                <li>Cơm trắng trộn mè và dầu mè</li>
+                <li>Lá rong biển</li>
+                <li>Trứng chiên</li>
+                <li>Cà rốt xào</li>
+                <li>Dưa chuột</li>
+                <li>Cải bó xôi luộc</li>
+                <li>Xúc xích, thanh cua hoặc thịt bò xào</li>
+                <li>Muối mè, dầu mè</li>
+            </ul>
+
+            <h2>CÁCH CHẾ BIẾN</h2>
+            <p>
+                • Trộn cơm với muối mè và dầu mè cho thơm.<br>
+                • Chuẩn bị các nguyên liệu: trứng chiên, cà rốt xào, dưa leo cắt thanh, cải bó xôi luộc.<br>
+                • Trải lá rong biển, dàn cơm lên và xếp nhân vào giữa.<br>
+                • Cuộn chặt tay cho tròn đều, cắt thành từng khoanh nhỏ.<br>
+            </p>
+
+            <!-- VIDEO -->
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/lC0jz0zdp6I"
+                title="Cách làm Kimbap Hàn Quốc đơn giản"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h2>TRÌNH BÀY</h2>
+            <p>
+                • Xếp kimbap thành hàng trên đĩa lớn.<br>
+                • Có thể rắc mè rang lên mặt để tăng hương vị.<br>
+                • Thường ăn kèm kim chi hoặc nước tương.<br>
+            </p>
+
+            <h2>FACTS</h2>
+            <p>
+                • Kimbap là món ăn phổ biến trong các buổi dã ngoại và bữa trưa học sinh Hàn Quốc.<br>
+                • Có nhiều biến thể như kimbap bò bulgogi, kimbap phô mai, kimbap chiên giòn.<br>
+            </p>
+
+            <h2>Phần Bình Luận</h2>
+
+            <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- ===== JS (Menu mobile) ===== -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+            navbar.classList.add("active");
+            if (hideTimer) clearTimeout(hideTimer);
+
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                if (hideTimer) clearTimeout(hideTimer);
+            } else {
+                openMenu();
+            }
+        });
+
+        navbar.addEventListener("click", () => {
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>

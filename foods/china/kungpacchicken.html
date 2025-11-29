@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gà Kung Pao — Snacken.</title>
+
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="/foods/cssall/style2.css">
+</head>
+
+<body>
+
+    <!-- ===== HEADER ===== -->
+    <header class="header">
+        <a href="/" class="logo">Snacken.</a>
+
+        <nav class="navbar">
+            <a href="/index.html">Home</a>
+            <a href="/countries/japanese.html">Nhật Bản</a>
+            <a href="/countries/korea.html">Hàn Quốc</a>
+            <a href="/countries/china.html">Trung Quốc</a>
+            <a href="/countries/vietnam.html">Việt Nam</a>
+        </nav>
+
+        <div class="menu-toggle" id="menu-toggle">☰</div>
+    </header>
+
+    <!-- ===== PAGE CONTENT ===== -->
+    <main class="container">
+
+        <h1 class="title">Gà Kung Pao (Cung Bảo Kê Đinh)</h1>
+
+        <section class="detail-card">
+
+            <p>
+                Gà Kung Pao là món ăn nổi tiếng của ẩm thực Tứ Xuyên, nổi bật với vị cay nhẹ, 
+                thơm nồng, hòa quyện giữa thịt gà mềm, đậu phộng béo bùi và hương vị đặc trưng 
+                của ớt khô cùng tiêu Tứ Xuyên.
+            </p>
+
+            <img class="main-img" 
+                 src="https://images.unsplash.com/photo-1603133872878-684f208fb84b?q=80&w=1470&auto=format&fit=crop"
+                 alt="Gà Kung Pao Trung Quốc">
+
+            <h2>NGUỒN GỐC</h2>
+            <p>
+                Món ăn có nguồn gốc từ tỉnh Tứ Xuyên, được đặt theo tên của một viên quan triều Thanh 
+                là Đinh Bao Trân, người rất yêu thích món gà xào cay này. Sau đó, món ăn lan rộng 
+                khắp Trung Quốc và được biến tấu ở nhiều quốc gia khác.
+            </p>
+
+            <h2>NGUYÊN LIỆU</h2>
+            <ul>
+                <li>Ức gà hoặc đùi gà lọc xương</li>
+                <li>Tỏi, gừng</li>
+                <li>Ớt khô</li>
+                <li>Tiêu Tứ Xuyên</li>
+                <li>Đậu phộng rang</li>
+                <li>Nước tương, giấm đen</li>
+                <li>Đường, muối</li>
+                <li>Bột bắp (để áo gà)</li>
+                <li>Hành lá</li>
+            </ul>
+
+            <h2>CÁCH CHẾ BIẾN</h2>
+            <p>
+                • Cắt gà thành khối nhỏ và ướp với nước tương, rượu nấu, bột bắp.<br>
+                • Phi thơm tỏi, gừng, ớt khô và tiêu Tứ Xuyên.<br>
+                • Xào gà cho chín vàng.<br>
+                • Thêm nước sốt (tương, giấm đen, đường) vào chảo.<br>
+                • Cho đậu phộng rang và hành lá vào đảo đều trước khi tắt bếp.<br>
+            </p>
+
+            <!-- VIDEO -->
+            <iframe width="560" height="315"
+                src="https://www.youtube.com/embed/4fF9Ok3TCNc"
+                title="Cách làm Gà Kung Pao chuẩn vị Trung Quốc"
+                frameborder="0"
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                allowfullscreen>
+            </iframe>
+
+            <h2>TRÌNH BÀY</h2>
+            <p>
+                • Gà được dọn trên dĩa lớn.<br>
+                • Trang trí thêm ít hành lá cắt nhỏ.<br>
+                • Thường dùng kèm cơm nóng để tăng hương vị.<br>
+            </p>
+
+            <h2>FACTS</h2>
+            <p>
+                • Món gà Kung Pao là một trong những món Trung Hoa phổ biến nhất tại phương Tây.<br>
+                • Phiên bản Tứ Xuyên truyền thống sử dụng tiêu Tứ Xuyên để tạo cảm giác tê đặc trưng.<br>
+            </p>
+
+            <h2>Phần Bình Luận</h2>
+
+            <form class="comment-form">
+                <label>Nhập tên:</label>
+                <input type="text" name="ten">
+
+                <label>Bình luận:</label>
+                <textarea name="comment" rows="4"></textarea>
+
+                <button type="submit">Gửi bình luận</button>
+            </form>
+
+        </section>
+    </main>
+
+    <!-- ===== JS (Menu mobile) ===== -->
+    <script>
+        const toggle = document.getElementById("menu-toggle");
+        const navbar = document.querySelector(".navbar");
+        let hideTimer = null;
+
+        function openMenu() {
+            navbar.classList.add("active");
+            if (hideTimer) clearTimeout(hideTimer);
+
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        }
+
+        toggle.addEventListener("click", () => {
+            if (navbar.classList.contains("active")) {
+                navbar.classList.remove("active");
+                if (hideTimer) clearTimeout(hideTimer);
+            } else {
+                openMenu();
+            }
+        });
+
+        navbar.addEventListener("click", () => {
+            if (hideTimer) clearTimeout(hideTimer);
+            hideTimer = setTimeout(() => {
+                navbar.classList.remove("active");
+            }, 2500);
+        });
+    </script>
+
+</body>
+</html>
